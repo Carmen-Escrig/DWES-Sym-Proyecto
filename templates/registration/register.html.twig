@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+
+{% block classBody %}<body class="sub_page">{% endblock %}
+
+
+{% block body %}
+</div>
+    <h1>Register</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email, {'attr': {'class':'form-control'}}) }}
+        {{ form_row(registrationForm.plainPassword, {'attr': {'class':'form-control'}}, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-lg btn-primary">Register</button>
+    {{ form_end(registrationForm) }}
+    Already have an account? <a href="{{ path('app_login') }}">Login</a>
+
+{% endblock %}
