@@ -21,6 +21,8 @@ class PageController extends AbstractController
 {
     use TargetPathTrait;
 
+    
+
     #[Route('/', name: 'index')]
     public function index(): Response
     {
