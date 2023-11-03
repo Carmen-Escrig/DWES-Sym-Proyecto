@@ -23,6 +23,11 @@
 	</div>
 	<div class="container">
 		<div class="chocolate_container">
+            {% if chocolates %}
+                {% for chocolate in chocolates %}
+                    {{ include ('partials/_chocolate_data.html.twig', {'chocolate': chocolate }) }}
+                {% endfor %}
+            {% endif %}
 			<div class="box">
 				<div class="img-box">
 					<img src="images/chocolate1.png" alt="">
