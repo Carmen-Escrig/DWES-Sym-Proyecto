@@ -836,6 +836,8 @@ a:focus {
 .info_section {
   background-color: #111111;
   color: #ffffff;
+
+   margin-top: 20px;
 }
 
 .info_section .info_form_social_row {
@@ -1037,3 +1039,17 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+#boton {
+  margin: 0 auto;
+  color: black;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+
+  margin-bottom: 20px;
+}
+
+#boton-contenedor {
+  text-align: center;
+}
