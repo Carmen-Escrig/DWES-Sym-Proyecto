@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chocolate{% endblock %}
+
+{% block classBody %}<body class="sub_page">{% endblock %}
+	
+{% block body %}
+
+</div>
+
+{% if chocolate %}
+
+<section class="about_section layout_padding ">
+	<div class="container  ">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="detail-box">
+					<div class="heading_container">
+						<h2>
+							{{ chocolate.name }} chocolate
+						</h2>
+					</div>
+					<p>
+						{{ chocolate.description }}
+					</p>
+					<a href="#">
+						<span>
+							{{ chocolate.price }} $
+						</span>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="img-box">
+					<img src="{{ asset('images/' ~ chocolate.file) }}" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--editar chocolate-->
+
+{% if app.user.roles[0] == 'ROLE_ADMIN' %}
+<section id="boton-contenedor">
+	<a href="{{ path('edit_chocolate', { 'id': chocolate.id }) }}" id="boton">Edit</a>
+</section>
+{% endif %}
+
+<!-- end chocolate section -->
+
+{% else %}
+    
+<section>
+<p>No chocolate selected</p>
+</section>
+
+{% endif %}
+
+{% endblock %}
+

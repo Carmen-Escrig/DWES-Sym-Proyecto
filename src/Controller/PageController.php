@@ -24,10 +24,14 @@ class PageController extends AbstractController
     
 
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(ManagerRegistry $doctrine): Response
     {
+        $repository = $doctrine->getRepository(Chocolate::class);
+        $chocolates = $repository->findAll();
         return $this->render('page/index.html.twig', [
             'controller_name' => 'PageController',
+            'chocolates' => $chocolates
+
         ]);
     }
 
@@ -190,5 +194,16 @@ class PageController extends AbstractController
             return $this->redirectToRoute('chocolate'); 
         }
         
+    }
+
+    #[Route('/chocolate/{id}', name: 'individual_chocolate')]
+    public function individualChocolate(ManagerRegistry $doctrine, $id): Response
+    {
+        $repository = $doctrine->getRepository(Chocolate::class);
+        $chocolate = $repository->find($id);
+        return $this->render('page/individual_chocolate.html.twig', [
+            'controller_name' => 'PageController',
+            'chocolate' => $chocolate
+        ]);
     }
 }
