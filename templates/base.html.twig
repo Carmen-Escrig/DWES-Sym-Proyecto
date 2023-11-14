@@ -18,7 +18,7 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
             <!-- bootstrap core css -->
-            <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
             <!--slick slider stylesheet -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
@@ -112,7 +112,7 @@
                         </h4>
                         <div class="insta_box">
                             <div class="img-box">
-                            <img src="images/insta-img.png" alt="">
+                            <img src="{{ asset('images/insta-img.png') }}" alt="">
                             </div>
                             <p>
                             long established fact that a reader
@@ -120,7 +120,7 @@
                         </div>
                         <div class="insta_box">
                             <div class="img-box">
-                            <img src="images/insta-img.png" alt="">
+                            <img src="{{ asset('images/insta-img.png') }}" alt="">
                             </div>
                             <p>
                             long established fact that a reader
